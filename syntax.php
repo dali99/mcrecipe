@@ -115,7 +115,7 @@ class syntax_plugin_mcrecipe extends DokuWiki_Syntax_Plugin {
 				if (preg_match('/tool\s+(.+)/', $match, $group)) {
 					$tool = $this->parseItem($group[1]);
 				} else {
-					$tool = array('minecraft:crafting_table','minecraft:crafting_table',1);
+					$tool = array('vanilla:crafting_table','vanilla:crafting_table',1);
 				}
 				if (preg_match('/output\s+(.+)/', $match, $group)) {
 					$output = $this->parseItem($group[1]);
@@ -135,8 +135,8 @@ class syntax_plugin_mcrecipe extends DokuWiki_Syntax_Plugin {
 		if ($item[0] == 'air') {
 			// do nothing
         } else {
-			$renderer->doc .= '<a href="doku.php?id=mods:'.$item[0].'">';
-			$renderer->doc .= '<img src="lib/exe/fetch.php?media=mods:'.$item[1].'.png" alt="'.$item[0].'" />';
+			$renderer->doc .= '<a href="doku.php?id=minecraft:'.$item[0].'">';
+			$renderer->doc .= '<img src="lib/exe/fetch.php?media=minecraft:'.$item[1].'.png" alt="'.$item[0].'" />';
 			if ($item[2] > 1) {
 				$renderer->doc .= '<span class="number">x'.$item[2].'</span>';
 			}
