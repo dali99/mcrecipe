@@ -99,7 +99,7 @@ class syntax_plugin_mcrecipe extends DokuWiki_Syntax_Plugin {
 		return $input;
 	}
 
-	function handle($match, $state, $pos, &$handler) {
+	function handle($match, $state, $pos, $handler) {
 		$args = array($state);
 		switch ($state) {
 			case DOKU_LEXER_ENTER:
